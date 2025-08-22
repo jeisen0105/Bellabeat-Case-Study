@@ -235,7 +235,7 @@ ggplot(data=daily_activity, aes(x=SedentaryMinutes, y=Calories)) +
 
 ![Chart](Rplot02.png)
 
-There is a negative correlatipon between Sentaery minutes and carlories burned.
+There is a negative correlatipon between Sedntaery minutes and carlories burned.
 
 ### Activity vs. Calories (Lightyly Active)
 
@@ -293,6 +293,8 @@ ggplot(data = sleep_hours) +
 ```
 ![Chart](Rplot06.png)
 
+This visualization shows that particiapnts get on average 7 hours of sleep while most range from 6 to 9 hours.
+
 ### Daily usage of smart devices
 
 ```r
@@ -310,6 +312,8 @@ daily_activity %>%
   theme_light()
 ```
 ![Chart](Rplot07.png)
+
+According to this visualization particiapnts wear their smar devices almost all day includiong during sleep. 
 
 ### Frequency of smart device use
 
@@ -335,6 +339,8 @@ daily_usage %>%
 
 ![Chart](Rplot08.png)
 
+The pie chart illustrates that 76 percent of participants wear their smart devices while 24 do not. 
+
 ### Average Hourly Intensity
 
 ```r
@@ -352,6 +358,8 @@ hourly_intensities %>%
 ```
 
 ![Chart](Rplot09.png)
+
+This visualization shows that most particiaptns are most active netween 6am and 10pm and the peak intensity occurs from 5pm-7pm.
 
 ### Average Hourly Steps
 
