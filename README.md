@@ -1,33 +1,33 @@
 # Bellabeat-Case-Study
 
 ### Table of Contents
-Introduction
-Background
-Scenario
-Ask
-Prepare
-Process
-Analyze
-Share
-Act
+1. Introduction
+2. Background
+3. Scenario
+4. Ask
+5. Prepare
+6. Process
+7. Analyze
+8. Share
+9. Act
 
-## Introduction 
+## 1. Introduction 
 
 In this project I will be examining the Bellabeat Wellness Technology Case Study which is a capstone project for the Google Data Analytics Professional Certificate. I will examine this case study and address key business questions using the different steps I learned from the course including; to ask, prepare, process, analyze, share and act.
 
-## Background
+## 2. Background
 
 Founded in 2013 by Urška Sršen and Sando Mur, Bellabeat is a high-tech company that specializes in manufacturing health-focused products designed to interact with one another for women. Bellabeat's products collect data on activity, sleep, stress, and reproductive health, empowering women with knowledge about their own health and habits. Since its inception, Bellabeat has quickly grown into a leading tech-driven wellness company for women. By 2016, Bellabeat had expanded its operations, opening offices worldwide and launching multiple products available on its company website and through various online retailers. 
 
 Bellabeat offers a vast array of products, including the Bellabeat app which provides users with health data related to their activity, sleep, stress, menstrual cycle, and mindfulness habits. Their product line also features the Leaf, a versatile wellness tracker that can be worn as a bracelet, necklace, or clip; the Time, a wellness watch combining classic aesthetics with smart technology to track activity, sleep, and stress; and finally, the Spring, a smart water bottle that tracks daily water intake. These smart technology options can all connect, enabling data-driven insights. In addition, Bellabeat provides a subscription-based membership program offering 24/7 access to fully personalized guidance on nutrition, activity, sleep, health and beauty, and mindfulness, tailored to individual lifestyles and goals. 
 
-## Scenario 
+## 3. Scenario 
 
 In this hypothetical case study I am working as a junior data analyst working on the marketing analyst team at Bellabeat and will be presenting my findings as well as possible solutions to the Bellabeat executive team. My report will specifically entail a clear statement on the business task, a description of data used, documentation of cleaning or manipulation of data, a summary of analysis, supporting visualizations and my top recommendations based on the analysis.
 
-## Ask
+## 4. Ask
 
-## Prepare
+## 5. Prepare
 
 ```r
 # Install and load necessary packages
@@ -52,7 +52,7 @@ hourly_intensities <- read.csv("hourlyIntensities_merged.csv")
 hourly_steps <- read.csv("hourlySteps_merged.csv")
 ```
 
-## Process:
+## 6. Process:
 
 ```r
 # Cleaning and Formatting
@@ -111,7 +111,7 @@ merged_data <- merge(sleep, daily_activity, by = "Id")
 glimpse(merged_data)
 ```
 
-## Analyze
+## 7. Analyze
 
 ### Analysis of Activity
 
@@ -128,7 +128,10 @@ daily_activity %>% # the total number of variables
  Max.   :36019   Max.   :28.030   Max.   :1440.0   Max.   :4900 
 ```
 
-Summary of findings
+#### Interesting Findings:
+- The average person takes 7.638 steps a day, which is less than the reccomended average of 10,000 by the American Heart Association.
+- Average calorie consumption is 2304.
+- The average particiapnts sendtary time is 991 minutes which is equivalent to rougly 16 hours.
 
 ```r
 daily_activity_hours <- daily_activity %>% # the number of active hours per category
@@ -145,11 +148,7 @@ daily_activity_hours <- daily_activity %>% # the number of active hours per cate
  Mean   :16.52   Mean   :0.3498   Mean   :0.223     Mean   :3.214   
  3rd Qu.:20.50   3rd Qu.:0.5000   3rd Qu.:0.300     3rd Qu.:4.400   
  Max.   :24.00   Max.   :3.5000   Max.   :2.400     Max.   :8.600  
-```
 
-Summary of findings
-
-```r
  daily_activity %>% # the number of active minutes per category
    select(VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes) %>%
    summary()
@@ -162,7 +161,8 @@ Summary of findings
  Max.   :210.00    Max.   :143.00      Max.   :518.0  
 ```
 
-Summary of findings
+#### Interesting Findings:
+- The majority of particiapants are lightly active when not sedentary while slighty more particiaptns are very activite as opposed to fairly active.
 
 ### Analysis of Sleep
 ```r
@@ -176,11 +176,7 @@ Summary of findings
  Mean   :1.12      Mean   :419.2      Mean   :458.5  
  3rd Qu.:1.00      3rd Qu.:490.0      3rd Qu.:526.0  
  Max.   :3.00      Max.   :796.0      Max.   :961.0 
-```
 
-Summary of findings
-
-```r
  sleep_hours <- sleep %>%
    mutate(TotalHoursAsleep = round (TotalMinutesAsleep / 60, 1),
           TotalHoursInBed = round(sleep$TotalTimeInBed / 60, 1)) %>%
@@ -194,10 +190,10 @@ Summary of findings
  3rd Qu.: 8.200   3rd Qu.: 8.800  
  Max.   :13.300   Max.   :16.000 
 ```
+#### Interesting Findings:
+- On average, each participant slept roughly over 7 hours.
 
-Summary of findings
-
-## Share
+## 8. Share
 
 ### Total Steps vs. Calories
 
@@ -309,7 +305,6 @@ daily_usage %>%
   labs(title = "Percentage frequency of daily usage level of device") +
   theme_void()
 ```
-
 ### Average Hourly Intensity
 
 ```r
@@ -324,10 +319,11 @@ hourly_intensities %>%
   theme_light()+ 
   theme(axis.text.x = element_text(angle = 90)) +
   labs(title = "Average Total Intensity vs. Time", x= "Time", y="Mean Total Intensity")
+```
+
+### Average Hourly Steps
+
 ```r
-
-### Average
-
 #Average Hourly Steps
 hourly_steps %>%
   group_by(time) %>%
@@ -339,8 +335,9 @@ hourly_steps %>%
   theme_light() +
   theme(axis.text.x = element_text(angle = 90)) +
   labs(title = "Average Steps Hourly", x="Activity Hour", y="Mean Total Steps")
+```
 
-Act:
+## 9. Act:
 
 
 
