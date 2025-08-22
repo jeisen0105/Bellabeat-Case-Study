@@ -291,11 +291,12 @@ ggplot(data = sleep_hours) +
   annotate("text", x=4, y=50, label="7 hours asleep", fontface = "bold", color = "black") +
   theme_light()
 ```
+![Chart](Rplot06.png)
 
 ### Daily usage of smart devices
 
 ```r
-#Daily usage of smart devices
+# Daily usage of smart devices
 daily_activity$total_time = rowSums(daily_activity[c("VeryActiveMinutes", "FairlyActiveMinutes", "LightlyActiveMinutes","SedentaryMinutes")])
 
 daily_activity %>% 
@@ -303,7 +304,7 @@ daily_activity %>%
   summarise(daily_usage_hours = mean(total_time/60)) %>% 
   
   ggplot() + 
-  geom_histogram(mapping = aes(x=daily_usage_hours), color = "black", fill = "orange", 
+  geom_histogram(mapping = aes(x=daily_usage_hours), color = "black", fill = "lightblue", 
                  bins = 30, show.legend=FALSE) +
   labs(title="Average App Usage Time (Hours)", x = "App Usage Time")+
   theme_light()
