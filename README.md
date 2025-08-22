@@ -284,11 +284,11 @@ There is the highest positive correlation between very active minutes and calori
 #Sleep distribution
 ggplot(data = sleep_hours) +
   geom_histogram(
-    mapping = aes(x = TotalHoursAsleep), color="black", fill="lightpink",
+    mapping = aes(x = TotalHoursAsleep), color="black", fill="lightblue",
     bins = 30, show.legend = FALSE) +
   labs(title = "Distribution of sleep records", x = 'Hours Asleep', y = "Count") +
-  geom_vline(aes(xintercept=7), linetype = "dashed", color = "green") +
-  annotate("text", x=5, y=50, label="7 hours asleep", fontface = "bold", color = "dark blue") +
+  geom_vline(aes(xintercept=7), linetype = "dashed", color = "red") +
+  annotate("text", x=4, y=50, label="7 hours asleep", fontface = "bold", color = "black") +
   theme_light()
 ```
 
