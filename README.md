@@ -377,6 +377,8 @@ hourly_steps %>%
   labs(title = "Average Steps Hourly", x="Activity Hour", y="Mean Total Steps")
 ```
 
+This visualization shows that most particiaptns are taking the most steps netween 6am and 10pm and the peak stpes occurs from 5pm-7pm.
+
 ![Chart](Rplot10.png)
 
 ## 9. Act:
