@@ -207,6 +207,8 @@ ggplot(data=daily_activity, aes(x=TotalSteps, y=Calories)) +
 
 ![Chart](Rplot.png)
 
+There is a positive correlation between the number of steps taken and the number of calories burned. 
+
 ### Total Steps vs. Minutes Asleep
 
 ```r
@@ -218,6 +220,8 @@ ggplot(data = merged_data, aes(x = TotalSteps, y = TotalMinutesAsleep)) +
   theme_classic()
 ```
 ![Chart](Rplot01.png)
+
+There is no correlation between user's daily steps and the amount of minutes spent asleep per day. 
 
 ### Activity vs. Calories (Sedentary)
 
@@ -231,6 +235,8 @@ ggplot(data=daily_activity, aes(x=SedentaryMinutes, y=Calories)) +
 
 ![Chart](Rplot02.png)
 
+There is a negative correlatipon between Sentaery minutes and carlories burned.
+
 ### Activity vs. Calories (Lightyly Active)
 
 ```r
@@ -241,6 +247,8 @@ ggplot(data=daily_activity, aes(x=LightlyActiveMinutes, y=Calories)) +
   theme_classic()
 ```
 ![Chart](Rplot03.png)
+
+There is very slight positive corerlation between lightly actvie minutes and calories burned. 
 
 ### Activity vs Calories (Fairly Active)
 
@@ -254,6 +262,8 @@ ggplot(data=daily_activity, aes(x=FairlyActiveMinutes, y=Calories)) +
 
 ![Chart](Rplot04.png)
 
+There is neither a positive or negative correlation between farily active minutes and calories burned. 
+
 ### Activity vs Calories (Very Active)
 
 ```r
@@ -263,8 +273,10 @@ ggplot(data=daily_activity, aes(x=VeryActiveMinutes, y=Calories)) +
   labs(title="VeryActiveMinutes vs. Calories") +
   theme_classic()
 ```
-
+ 
 ![Chart](Rplot05.png)
+
+There is the highest positive correlation between very active minutes and calories burned.
 
 ### Sleep distribution
 
