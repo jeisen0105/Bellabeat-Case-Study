@@ -309,11 +309,12 @@ daily_activity %>%
   labs(title="Average App Usage Time (Hours)", x = "App Usage Time")+
   theme_light()
 ```
+![Chart](Rplot07.png)
 
 ### Frequency of smart device use
 
 ```r
-#Frequency of smart device use
+# Frequency of smart device use
 daily_usage <- daily_activity %>%
   group_by(Id) %>%
   summarise(daily_usage_hours = mean(total_time / 60)) %>%
@@ -326,11 +327,12 @@ daily_usage %>%
   geom_bar(stat = "identity", width = 1) +
   coord_polar("y", start = 0) +
   geom_text(aes(label = round(percentage)), position = position_stack(vjust = 0.5)) +
-  scale_fill_manual(values = c("lightblue", "pink"),
+  scale_fill_manual(values = c("red", "blue"),
                     labels = c("High use: > 17 hours", "Low use: < 17 hours")) +
   labs(title = "Percentage frequency of daily usage level of device") +
-  theme_void()
+  theme_void() 
 ```
+
 ### Average Hourly Intensity
 
 ```r
