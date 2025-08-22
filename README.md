@@ -18,6 +18,7 @@ In this project I will be examining the Bellabeat Wellness Technology Case Study
 ## Background
 
 Founded in 2013 by Urška Sršen and Sando Mur, Bellabeat is a high-tech company that specializes in manufacturing health-focused products designed to interact with one another for women. Bellabeat's products collect data on activity, sleep, stress, and reproductive health, empowering women with knowledge about their own health and habits. Since its inception, Bellabeat has quickly grown into a leading tech-driven wellness company for women. By 2016, Bellabeat had expanded its operations, opening offices worldwide and launching multiple products available on its company website and through various online retailers. 
+
 Bellabeat offers a vast array of products, including the Bellabeat app which provides users with health data related to their activity, sleep, stress, menstrual cycle, and mindfulness habits. Their product line also features the Leaf, a versatile wellness tracker that can be worn as a bracelet, necklace, or clip; the Time, a wellness watch combining classic aesthetics with smart technology to track activity, sleep, and stress; and finally, the Spring, a smart water bottle that tracks daily water intake. These smart technology options can all connect, enabling data-driven insights. In addition, Bellabeat provides a subscription-based membership program offering 24/7 access to fully personalized guidance on nutrition, activity, sleep, health and beauty, and mindfulness, tailored to individual lifestyles and goals. 
 
 ## Scenario 
@@ -207,7 +208,7 @@ ggplot(data=daily_activity, aes(x=TotalSteps, y=Calories)) +
   labs(title="Total Steps vs. Calories") +
   theme_classic()
 ```
-### Total Steps vs. Minutes Asleeo
+### Total Steps vs. Minutes Asleep
 
 ```r
 #Total Steps vs. Minutes Asleep
@@ -227,24 +228,38 @@ ggplot(data=daily_activity, aes(x=SedentaryMinutes, y=Calories)) +
   theme_classic()
 ```
 
+### Activity vs. Calories (Lightyly Active)
+
+```r
 #Activity vs Calories (Lightly Active)
 ggplot(data=daily_activity, aes(x=LightlyActiveMinutes, y=Calories)) + 
   geom_point() + geom_smooth(color = "red") +
   labs(title="LightlyActiveMinutes vs. Calories") +
   theme_classic()
+```
 
+### Activity vs Calories (Fairly Active)
+
+```r
 #Activity vs Calories (Fairly Active)
 ggplot(data=daily_activity, aes(x=FairlyActiveMinutes, y=Calories)) + 
   geom_point() + geom_smooth(color = "red") +
   labs(title="FairlyActiveMinutes vs. Calories") +
   theme_classic()
+```
 
+### Activity vs Calories (Very Active)
+
+```r
 #Activity vs Calories (Very Active)
 ggplot(data=daily_activity, aes(x=VeryActiveMinutes, y=Calories)) + 
   geom_point() + geom_smooth(color = "red") +
   labs(title="VeryActiveMinutes vs. Calories") +
   theme_classic()
+```
+### Sleep distribution
 
+```r
 #Sleep distribution
 ggplot(data = sleep_hours) +
   geom_histogram(
@@ -254,7 +269,11 @@ ggplot(data = sleep_hours) +
   geom_vline(aes(xintercept=7), linetype = "dashed", color = "green") +
   annotate("text", x=5, y=50, label="7 hours asleep", fontface = "bold", color = "dark blue") +
   theme_light()
+```
 
+### Daily usage of smart devices
+
+```r
 #Daily usage of smart devices
 daily_activity$total_time = rowSums(daily_activity[c("VeryActiveMinutes", "FairlyActiveMinutes", "LightlyActiveMinutes","SedentaryMinutes")])
 
@@ -267,7 +286,11 @@ daily_activity %>%
                  bins = 30, show.legend=FALSE) +
   labs(title="Average App Usage Time (Hours)", x = "App Usage Time")+
   theme_light()
+```
 
+### Frequency of smart device use
+
+```r
 #Frequency of smart device use
 daily_usage <- daily_activity %>%
   group_by(Id) %>%
@@ -284,8 +307,12 @@ daily_usage %>%
   scale_fill_manual(values = c("lightblue", "pink"),
                     labels = c("High use: > 17 hours", "Low use: < 17 hours")) +
   labs(title = "Percentage frequency of daily usage level of device") +
-  theme_void() 
+  theme_void()
+```
 
+### Average Hourly Intensity
+
+```r
 #Average Hourly Intensity
 hourly_intensities %>%
   group_by(time) %>%
@@ -294,9 +321,12 @@ hourly_intensities %>%
   ggplot(aes(x = time, y = Avg_hourly_int)) +
   geom_histogram(aes(fill= Avg_hourly_int), stat="identity")+ 
   scale_fill_gradient(low = "yellow", high = "lightgreen") +
-  theme_light()+
+  theme_light()+ 
   theme(axis.text.x = element_text(angle = 90)) +
   labs(title = "Average Total Intensity vs. Time", x= "Time", y="Mean Total Intensity")
+```r
+
+### Average
 
 #Average Hourly Steps
 hourly_steps %>%
@@ -309,6 +339,7 @@ hourly_steps %>%
   theme_light() +
   theme(axis.text.x = element_text(angle = 90)) +
   labs(title = "Average Steps Hourly", x="Activity Hour", y="Mean Total Steps")
+
 Act:
 
 
