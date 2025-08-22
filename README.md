@@ -333,6 +333,8 @@ daily_usage %>%
   theme_void() 
 ```
 
+![Chart](Rplot08.png)
+
 ### Average Hourly Intensity
 
 ```r
@@ -343,23 +345,25 @@ hourly_intensities %>%
   
   ggplot(aes(x = time, y = Avg_hourly_int)) +
   geom_histogram(aes(fill= Avg_hourly_int), stat="identity")+ 
-  scale_fill_gradient(low = "yellow", high = "lightgreen") +
-  theme_light()+ 
+  scale_fill_gradient(low = "red", high = "orange") +
+  theme_light()+
   theme(axis.text.x = element_text(angle = 90)) +
   labs(title = "Average Total Intensity vs. Time", x= "Time", y="Mean Total Intensity")
 ```
 
+![Chart](Rplot09.png)
+
 ### Average Hourly Steps
 
 ```r
-#Average Hourly Steps
+# Average Hourly Steps
 hourly_steps %>%
   group_by(time) %>%
   summarise(Avg_hourly_steps = mean(StepTotal)) %>%
   
   ggplot(aes(x = time, y = Avg_hourly_steps)) +
   geom_histogram(aes(fill = Avg_hourly_steps), stat = "identity") +
-  scale_fill_gradient(low = "pink", high = "lightblue") +
+  scale_fill_gradient(low = "green", high = "yellow") +
   theme_light() +
   theme(axis.text.x = element_text(angle = 90)) +
   labs(title = "Average Steps Hourly", x="Activity Hour", y="Mean Total Steps")
