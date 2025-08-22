@@ -162,7 +162,40 @@ Summary of findings
 ```
 
 Summary of findings
- 
+
+### Analysis of Sleep
+```r
+ sleep %>%
+   select(TotalSleepRecords, TotalMinutesAsleep, TotalTimeInBed) %>%
+   summary()
+ TotalSleepRecords TotalMinutesAsleep TotalTimeInBed 
+ Min.   :1.00      Min.   : 58.0      Min.   : 61.0  
+ 1st Qu.:1.00      1st Qu.:361.0      1st Qu.:403.8  
+ Median :1.00      Median :432.5      Median :463.0  
+ Mean   :1.12      Mean   :419.2      Mean   :458.5  
+ 3rd Qu.:1.00      3rd Qu.:490.0      3rd Qu.:526.0  
+ Max.   :3.00      Max.   :796.0      Max.   :961.0 
+```
+
+Summary of findings
+
+```r
+ sleep_hours <- sleep %>%
+   mutate(TotalHoursAsleep = round (TotalMinutesAsleep / 60, 1),
+          TotalHoursInBed = round(sleep$TotalTimeInBed / 60, 1)) %>%
+   select(TotalHoursAsleep, TotalHoursInBed)
+ summary(sleep_hours)
+ TotalHoursAsleep TotalHoursInBed 
+ Min.   : 1.000   Min.   : 1.000  
+ 1st Qu.: 6.000   1st Qu.: 6.725  
+ Median : 7.200   Median : 7.700  
+ Mean   : 6.987   Mean   : 7.639  
+ 3rd Qu.: 8.200   3rd Qu.: 8.800  
+ Max.   :13.300   Max.   :16.000 
+```
+
+Summary of findings
+
 Share:
 
 Act:
