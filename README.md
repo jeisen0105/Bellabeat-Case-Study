@@ -11,7 +11,6 @@ Analyze
 Share
 Act
 
-
 ## Introduction 
 
 In this project I will be examining the Bellabeat Wellness Technology Case Study which is a capstone project for the Google Data Analytics Professional Certificate. I will examine this case study and address key business questions using the different steps I learned from the course including; to ask, prepare, process, analyze, share and act.
@@ -111,8 +110,78 @@ merged_data <- merge(sleep, daily_activity, by = "Id")
 glimpse(merged_data)
 ```
 
-Analyze:
+## Analysis
 
+```r
+#Analysis of Activity
+daily_activity %>%  
+  select(TotalSteps, TotalDistance, SedentaryMinutes, Calories) %>%
+  summary()
+
+daily_activity_hours <- daily_activity %>% # the number of sedentary hours per category
+  mutate(SedentaryHours = round(SedentaryMinutes / 60, 1),
+         VeryActiveHours = round(VeryActiveMinutes / 60, 1),
+         FairlyActiveHours = round(FairlyActiveMinutes / 60, 1),
+         LightActiveHours = round(LightlyActiveMinutes / 60, 1)) %>%
+  select(SedentaryHours, VeryActiveHours, FairlyActiveHours, LightActiveHours)
+summary(daily_activity_hours)
+
+daily_activity %>% # the number of active minutes per category
+  select(VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes) %>%
+  summary()
+```
+   TotalSteps    TotalDistance    SedentaryMinutes    Calories   
+ Min.   :    0   Min.   : 0.000   Min.   :   0.0   Min.   :   0  
+ 1st Qu.: 3790   1st Qu.: 2.620   1st Qu.: 729.8   1st Qu.:1828  
+ Median : 7406   Median : 5.245   Median :1057.5   Median :2134  
+ Mean   : 7638   Mean   : 5.490   Mean   : 991.2   Mean   :2304  
+ 3rd Qu.:10727   3rd Qu.: 7.713   3rd Qu.:1229.5   3rd Qu.:2793  
+ Max.   :36019   Max.   :28.030   Max.   :1440.0   Max.   :4900  
+
+  SedentaryHours  VeryActiveHours  FairlyActiveHours LightActiveHours
+ Min.   : 0.00   Min.   :0.0000   Min.   :0.000     Min.   :0.000   
+ 1st Qu.:12.20   1st Qu.:0.0000   1st Qu.:0.000     1st Qu.:2.100   
+ Median :17.60   Median :0.1000   Median :0.100     Median :3.300   
+ Mean   :16.52   Mean   :0.3498   Mean   :0.223     Mean   :3.214   
+ 3rd Qu.:20.50   3rd Qu.:0.5000   3rd Qu.:0.300     3rd Qu.:4.400   
+ Max.   :24.00   Max.   :3.5000   Max.   :2.400     Max.   :8.600   
+
+ VeryActiveMinutes FairlyActiveMinutes LightlyActiveMinutes
+ Min.   :  0.00    Min.   :  0.00      Min.   :  0.0       
+ 1st Qu.:  0.00    1st Qu.:  0.00      1st Qu.:127.0       
+ Median :  4.00    Median :  6.00      Median :199.0       
+ Mean   : 21.16    Mean   : 13.56      Mean   :192.8       
+ 3rd Qu.: 32.00    3rd Qu.: 19.00      3rd Qu.:264.0       
+ Max.   :210.00    Max.   :143.00      Max.   :518.0   
+ 
+```r
+# Analysis of Sleep
+sleep %>%
+  select(TotalSleepRecords, TotalMinutesAsleep, TotalTimeInBed) %>%
+  summary()
+
+sleep_hours <- sleep %>%
+  mutate(TotalHoursAsleep = round (TotalMinutesAsleep / 60, 1),
+         TotalHoursInBed = round(sleep$TotalTimeInBed / 60, 1)) %>%
+  select(TotalHoursAsleep, TotalHoursInBed)
+summary(sleep_hours)
+```
+ TotalSleepRecords TotalMinutesAsleep TotalTimeInBed 
+ Min.   :1.00      Min.   : 58.0      Min.   : 61.0  
+ 1st Qu.:1.00      1st Qu.:361.0      1st Qu.:403.8  
+ Median :1.00      Median :432.5      Median :463.0  
+ Mean   :1.12      Mean   :419.2      Mean   :458.5  
+ 3rd Qu.:1.00      3rd Qu.:490.0      3rd Qu.:526.0  
+ Max.   :3.00      Max.   :796.0      Max.   :961.0 
+
+  TotalHoursAsleep TotalHoursInBed 
+ Min.   : 1.000   Min.   : 1.000  
+ 1st Qu.: 6.000   1st Qu.: 6.725  
+ Median : 7.200   Median : 7.700  
+ Mean   : 6.987   Mean   : 7.639  
+ 3rd Qu.: 8.200   3rd Qu.: 8.800  
+ Max.   :13.300   Max.   :16.000  
+ 
 Share:
 
 Act:
