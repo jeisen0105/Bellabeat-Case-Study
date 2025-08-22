@@ -51,7 +51,7 @@ hourly_intensities <- read.csv("hourlyIntensities_merged.csv")
 hourly_steps <- read.csv("hourlySteps_merged.csv")
 ```
 
-Process:
+## Process:
 
 ```r
 # Cleaning and Formatting
@@ -110,7 +110,7 @@ merged_data <- merge(sleep, daily_activity, by = "Id")
 glimpse(merged_data)
 ```
 
-## Analysis
+## Analyze
 
 ### Analysis of Activity
 
