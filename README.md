@@ -369,6 +369,8 @@ hourly_steps %>%
   labs(title = "Average Steps Hourly", x="Activity Hour", y="Mean Total Steps")
 ```
 
+![Chart](Rplot10.png)
+
 ## 9. Act:
 
 
