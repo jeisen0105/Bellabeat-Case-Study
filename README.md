@@ -196,8 +196,119 @@ Summary of findings
 
 Summary of findings
 
-Share:
+## Share
 
+### Total Steps vs. Calories
+
+```r
+#Total Steps vs. Calories
+ggplot(data=daily_activity, aes(x=TotalSteps, y=Calories)) + 
+  geom_point() + geom_smooth(color = "red") +
+  labs(title="Total Steps vs. Calories") +
+  theme_classic()
+```
+### Total Steps vs. Minutes Asleeo
+
+```r
+#Total Steps vs. Minutes Asleep
+ggplot(data = merged_data, aes(x = TotalSteps, y = TotalMinutesAsleep)) +
+  geom_jitter() +
+  geom_smooth(color="red") +
+  labs(title = "Total Steps vs. Minutes Asleep", x = "Total Steps", y = "Minutes Asleep") +
+  theme_classic()
+```
+### Activity vs. Calories (Sedentary)
+
+```r
+#Activity vs Calories (Sedentary)
+ggplot(data=daily_activity, aes(x=SedentaryMinutes, y=Calories)) + 
+  geom_point() + geom_smooth(color = "red") +
+  labs(title="SedentaryMinutes vs. Calories") +
+  theme_classic()
+```
+
+#Activity vs Calories (Lightly Active)
+ggplot(data=daily_activity, aes(x=LightlyActiveMinutes, y=Calories)) + 
+  geom_point() + geom_smooth(color = "red") +
+  labs(title="LightlyActiveMinutes vs. Calories") +
+  theme_classic()
+
+#Activity vs Calories (Fairly Active)
+ggplot(data=daily_activity, aes(x=FairlyActiveMinutes, y=Calories)) + 
+  geom_point() + geom_smooth(color = "red") +
+  labs(title="FairlyActiveMinutes vs. Calories") +
+  theme_classic()
+
+#Activity vs Calories (Very Active)
+ggplot(data=daily_activity, aes(x=VeryActiveMinutes, y=Calories)) + 
+  geom_point() + geom_smooth(color = "red") +
+  labs(title="VeryActiveMinutes vs. Calories") +
+  theme_classic()
+
+#Sleep distribution
+ggplot(data = sleep_hours) +
+  geom_histogram(
+    mapping = aes(x = TotalHoursAsleep), color="black", fill="lightpink",
+    bins = 30, show.legend = FALSE) +
+  labs(title = "Distribution of sleep records", x = 'Hours Asleep', y = "Count") +
+  geom_vline(aes(xintercept=7), linetype = "dashed", color = "green") +
+  annotate("text", x=5, y=50, label="7 hours asleep", fontface = "bold", color = "dark blue") +
+  theme_light()
+
+#Daily usage of smart devices
+daily_activity$total_time = rowSums(daily_activity[c("VeryActiveMinutes", "FairlyActiveMinutes", "LightlyActiveMinutes","SedentaryMinutes")])
+
+daily_activity %>% 
+  group_by(Id) %>% 
+  summarise(daily_usage_hours = mean(total_time/60)) %>% 
+  
+  ggplot() + 
+  geom_histogram(mapping = aes(x=daily_usage_hours), color = "black", fill = "orange", 
+                 bins = 30, show.legend=FALSE) +
+  labs(title="Average App Usage Time (Hours)", x = "App Usage Time")+
+  theme_light()
+
+#Frequency of smart device use
+daily_usage <- daily_activity %>%
+  group_by(Id) %>%
+  summarise(daily_usage_hours = mean(total_time / 60)) %>%
+  mutate(usage = if_else(daily_usage_hours >= 17, "high", "low"))
+
+daily_usage %>%
+  count(usage) %>%
+  mutate(percentage = n * 100 / sum(n)) %>%
+  ggplot(aes(x = "", y = percentage, fill = usage)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  geom_text(aes(label = round(percentage)), position = position_stack(vjust = 0.5)) +
+  scale_fill_manual(values = c("lightblue", "pink"),
+                    labels = c("High use: > 17 hours", "Low use: < 17 hours")) +
+  labs(title = "Percentage frequency of daily usage level of device") +
+  theme_void() 
+
+#Average Hourly Intensity
+hourly_intensities %>%
+  group_by(time) %>%
+  summarise(Avg_hourly_int = mean(TotalIntensity)) %>%
+  
+  ggplot(aes(x = time, y = Avg_hourly_int)) +
+  geom_histogram(aes(fill= Avg_hourly_int), stat="identity")+ 
+  scale_fill_gradient(low = "yellow", high = "lightgreen") +
+  theme_light()+
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Average Total Intensity vs. Time", x= "Time", y="Mean Total Intensity")
+
+#Average Hourly Steps
+hourly_steps %>%
+  group_by(time) %>%
+  summarise(Avg_hourly_steps = mean(StepTotal)) %>%
+  
+  ggplot(aes(x = time, y = Avg_hourly_steps)) +
+  geom_histogram(aes(fill = Avg_hourly_steps), stat = "identity") +
+  scale_fill_gradient(low = "pink", high = "lightblue") +
+  theme_light() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Average Steps Hourly", x="Activity Hour", y="Mean Total Steps")
 Act:
 
 
