@@ -214,7 +214,7 @@ ggplot(data = merged_data, aes(x = TotalSteps, y = TotalMinutesAsleep)) +
   labs(title = "Total Steps vs. Minutes Asleep", x = "Total Steps", y = "Minutes Asleep") +
   theme_classic()
 ```
-![Chart](Rplot.png)
+![Chart](Rplot01.png)
 
 ### Activity vs. Calories (Sedentary)
 
@@ -226,6 +226,8 @@ ggplot(data=daily_activity, aes(x=SedentaryMinutes, y=Calories)) +
   theme_classic()
 ```
 
+![Chart](Rplot.png)
+
 ### Activity vs. Calories (Lightyly Active)
 
 ```r
@@ -235,6 +237,7 @@ ggplot(data=daily_activity, aes(x=LightlyActiveMinutes, y=Calories)) +
   labs(title="LightlyActiveMinutes vs. Calories") +
   theme_classic()
 ```
+![Chart](Rplot02.png)
 
 ### Activity vs Calories (Fairly Active)
 
@@ -245,6 +248,8 @@ ggplot(data=daily_activity, aes(x=FairlyActiveMinutes, y=Calories)) +
   labs(title="FairlyActiveMinutes vs. Calories") +
   theme_classic()
 ```
+
+![Chart](Rplot03.png)
 
 ### Activity vs Calories (Very Active)
 
