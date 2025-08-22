@@ -214,6 +214,8 @@ ggplot(data = merged_data, aes(x = TotalSteps, y = TotalMinutesAsleep)) +
   labs(title = "Total Steps vs. Minutes Asleep", x = "Total Steps", y = "Minutes Asleep") +
   theme_classic()
 ```
+![Chart](Rplot.png)
+
 ### Activity vs. Calories (Sedentary)
 
 ```r
