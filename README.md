@@ -27,7 +27,19 @@ In this hypothetical case study I am working as a junior data analyst working on
 
 ## 4. Ask
 
+When approaching the ask section it is vital to understand the business task and to consider key stakeholders. The business task or what I will be trying to solve is how poeple use and dont use Bellabeat's products. Once I find out why customers either use or dont use Bellabeat products I will be able to create niche marketing strategies to reach potentional customers. 
+
+In order to determine whether or not the data source is reliable, original, comprehensive, current and cited I will follow the ROCCC framework.
+
 ## 5. Prepare
+
+### Data Source
+
+The data used contains personal health data from consensual 30 fitbut users and include outputs for daily activity, steps, heart rate, and sleeo monitoring which can be used to explore customers helath habits. The data is public, made avcaliable through Kaggle specifically Mobius user profile (clickable) and gernated by responses to a survery conducted by Amazon Mechanical Turk. 
+
+In order to detemine whether or not the data source is reliable, original, comprehensive, current and cited I will follow the ROCCC framework. I know the data is not very reliable becasue only 30 particaptns is a very small sample size and cannot accurately reflect the entire population of female fitbut users. The orginality of the data is also low becaue it was colleted from a thur paty source via Amazon Mechanical Turk. The data is afdditonaly not very comprehansive as it does not consist data abiut age, gender but did conain other personal health data that allowed me to answer the buisness questions. Finally the data is not very current as responses were collected from March 2016 to May 2016 however the data set is well cited and doccumented. 
+
+After observing wether the data source was reliable, original, comprehensive, current and cited I prepared the data in R posit. 
 
 ```r
 # Install and load necessary packages
@@ -377,9 +389,9 @@ hourly_steps %>%
   labs(title = "Average Steps Hourly", x="Activity Hour", y="Mean Total Steps")
 ```
 
-This visualization shows that most particiaptns are taking the most steps netween 6am and 10pm and the peak stpes occurs from 5pm-7pm.
-
 ![Chart](Rplot10.png)
+
+This visualization shows that most particiaptns are taking the most steps netween 6am and 10pm and the peak stpes occurs from 5pm-7pm.
 
 ## 9. Act:
 
