@@ -395,7 +395,26 @@ This visualization shows that most particiaptns are taking the most steps netwee
 
 ## 9. Act:
 
+### Key Takeaways
+- Averages Ballebeat app users walk more than 7,600 steps per day.
+- Average calorie consumption among partucapts is 2304 per day. 
+- 24% of particiapnts do not wear devices almost all day.
+- Users sleep less rougly over 7 hours per day while most range from 6 to 9 hours.
+- The average particiapnts sendtary time is 991 minutes which is equivalent to rougly 16 hours per day.
+- The majority of particiapants are lightly active when not sedentary while slighty more particiaptns are very activite as opposed to fairly active.
+- There is a positive correlation between the number of steps taken and the number of calories burned.
+- There is no correlation between user's daily steps and the amount of minutes spent asleep per day.
+- There is a negative correlatipon between Sedntaery minutes and carlories burned.
+- There is very slight positive corerlation between lightly actvie minutes and calories burned.
+- There is neither a positive or negative correlation between farily active minutes and calories burned.
+- There is the highest positive correlation between very active minutes and calories burned.
+- Particiapnts wear their smar devices almost all day includiong during sleep. 
+- Most particiaptns are most active and take the most steps netween 6am and 10pm and the peak intensity occurs from 5pm-7pm.
 
+### Reccomednations
+1. 
+
+### Conclusion
 
 
 
