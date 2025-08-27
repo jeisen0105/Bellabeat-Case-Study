@@ -205,8 +205,6 @@ daily_activity_hours <- daily_activity %>% # the number of active hours per cate
 #### Interesting Findings:
 - On average, each participant slept roughly over 7 hours.
 
-## 8. Share
-
 ### Total Steps vs. Calories
 
 ```r
@@ -393,6 +391,11 @@ hourly_steps %>%
 
 This visualization shows that most particiaptns are taking the most steps netween 6am and 10pm and the peak stpes occurs from 5pm-7pm.
 
+## 8. Share
+
+Below is a link to my Google Slides presentation of the case study:
+
+
 ## 9. Act:
 
 ### Key Takeaways
@@ -412,7 +415,9 @@ This visualization shows that most particiaptns are taking the most steps netwee
 - Most particiaptns are most active and take the most steps netween 6am and 10pm and the peak intensity occurs from 5pm-7pm.
 
 ### Reccomednations
-1. 
+1. One reccomendation I have for the Bellabeat team is for users to be encouragd to reach the American Heart Associations reccomended daily step goal of 10,000 steps. By having the Bellabeat app send friednly remainders tha the user hasnt reached the daily step goal in adition to posts on the app showing why it is bennedicial for health.
+2. Another reccomendation I have is for the Bellabeat to send friednly reminders during 5pm-7pm to hit the customers goals due to the time being peak hours for activity and number of steps taken.
+3. Finally I reccomend that Bellabeat provide a promotion that gives membership discounts to customers that burn a certain amount of calories giving incentive to workout and promote healthy habits. It also provides incentive for customers to track the amount of calories they burned through Bellabeat smart devices. 
 
 ### Conclusion
 
