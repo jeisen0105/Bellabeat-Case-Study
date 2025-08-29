@@ -420,9 +420,6 @@ Below is a link to my Google Slides presentation of the case study:
 3. Finally I reccomend that Bellabeat provide a promotion that gives membership discounts to customers that burn a certain amount of calories giving incentive to workout and promote healthy habits. It also provides incentive for customers to track the amount of calories they burned through Bellabeat smart devices. 
 
 ### Conclusion
-
-
-
-
+In order to find out how Bellabeat customers use and do not use their Bellabeat smart products I conducted an analysis using the data of 30 Bellebeat fit bit users. The goal is to illustrate how women use the Bellabeat app and smart devices throughout the day in order to create niche marketing stratgies to reach potential customers. The strategies included using daily notifications to remind users to continue to try to reach the daily step reccomendation or to start working out in general and would be most effective during 5-7 when customers are at peak activity. Finally I also reccomend that Bellabeat provide a promotion that gives membership discounts to customers that burn a certain amount of calories giving incentive to workout, promote healthy habits and use their Bellabeat smartdevices.  
 
 
