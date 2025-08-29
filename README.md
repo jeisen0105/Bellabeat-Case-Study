@@ -1,4 +1,4 @@
--# Bellabeat-Case-Study
+# Bellabeat-Case-Study
 
 ### Table of Contents
 1. Introduction
