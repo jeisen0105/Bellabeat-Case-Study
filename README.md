@@ -1,4 +1,4 @@
-# Bellabeat-Case-Study
+-# Bellabeat-Case-Study
 
 ### Table of Contents
 1. Introduction
@@ -424,9 +424,16 @@ Below is a link to my Google Slides presentation of the case study:
 - Most participants are most active and take the most steps between 6am and 10pm and the peak intensity occurs from 5pm-7pm.
 
 ### Reccomednations
-1. One recommendation I have for the Bellabeat team is for users to be encouraged to reach the American Heart Association's recommended daily step goal of 10,000 steps. By having the Bellabeat app send friendly reminders that the user has not reached the daily step goal in addition to posts on the app showing why it is beneficial for health.
-2. Another recommendation I have is for Bellabeat to send friendly reminders during 5pm-7pm to hit the customers goals due to the time being peak hours for activity and number of steps taken.
-3. Finally I recommend that Bellabeat provide a promotion that gives membership discounts to customers that burn a certain amount of calories giving incentive to workout and promote healthy habits. It also provides incentive for customers to track the amount of calories they burned through Bellabeat smart devices. 
+-Promote the 10,000-Step Goal
+  -To increase user engagement and promote healthy habits, I recommend that Bellabeat encourage users to meet the American Heart Association's recommended 10,000-step daily goal. This can be achieved through a multi-faceted approach:
+    -In-app reminders that provide a friendly nudge when a user has not reached their daily goal.
+    -Educational content in the app's feed, such as articles and infographics, explaining the health benefits of reaching this milestone.
+-Optimize Reminders for Peak Activity Hours
+  -My analysis of the data revealed that user activity and step count are highest between 5 PM and 7 PM. I recommend that Bellabeat leverage this insight by sending friendly reminders and motivational notifications during this window to help users achieve their goals. This strategy capitalizes on a period when users are already most likely to be active.
+- Implement a Reward-Based Promotion
+  -To drive user retention and encourage the use of all Bellabeat devices, I recommend a tiered membership discount program. This promotion would provide a discount on Bellabeat's subscription membership to customers who burn a certain number of calories per week, as tracked by their devices. This provides a direct incentive for users to:
+    -Engage in regular physical activity.
+    -Consistently use their Bellabeat devices to track their workouts.
 
 ### Conclusion
 In order to find out how Bellabeat customers use and do not use their Bellabeat smart products I conducted an analysis using the data of 30 Bellebeat fit bit users. The goal is to illustrate how women use the Bellabeat app and smart devices throughout the day in order to create niche marketing strategies to reach potential customers. The strategies included using daily notifications to remind users to continue to try to reach the daily step recommendation or to start working out in general and would be most effective during 5-7 when customers are at peak activity. Finally I also recommend that Bellabeat provide a promotion that gives membership discounts to customers that burn a certain amount of calories giving incentive to workout, promote healthy habits and use their Bellabeat smart devices. 
