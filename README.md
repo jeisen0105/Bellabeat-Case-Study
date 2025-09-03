@@ -406,7 +406,7 @@ hourly_steps %>%
 Below is a link to my Google Slides presentation of the case study:
 
 
-[Case Study Presentation]([https://docs.google.com/presentation/d/1tSAN2O-nCUPZwXn4mAo8GnBrnL4hxDB_QYoiYfrqYw8/edit?usp=sharing](https://docs.google.com/presentation/d/1tU8KS9op62qVXnIrWcaivPte9PcknePU2wuTu7F8lS8/edit?slide=id.g379c44b0c69_0_50#slide=id.g379c44b0c69_0_50))
+[Case Study Presentation](https://docs.google.com/presentation/d/1tSAN2O-nCUPZwXn4mAo8GnBrnL4hxDB_QYoiYfrqYw8/edit?usp=sharing](https://docs.google.com/presentation/d/1tU8KS9op62qVXnIrWcaivPte9PcknePU2wuTu7F8lS8/edit?slide=id.g379c44b0c69_0_50#slide=id.g379c44b0c69_0_50))
 
 ## 9. Act:
 
